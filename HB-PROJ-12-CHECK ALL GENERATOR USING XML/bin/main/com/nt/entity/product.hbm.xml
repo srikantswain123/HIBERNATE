@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.nt.entity.Product" table="PRODUCT">
+		<id name="pid" column="PID" type="int">
+		<!-- Given by hibernate software for both oracle and mysql-->
+		<!-- <generator class="increment"/> -->  
+		<!-- ================================================================= -->
+		
+		<!-- Given by my  sql software for  as AutoIncrement-->
+         <!-- <generator class="identity"/> -->  
+         <!-- ================================================================     -->
+                  
+         <!-- Given by oracle as Sequence -->
+         <!-- <generator class="sequence"/> -->  
+         <!-- ================================================================     -->
+         
+         
+         <!-- Used for oracle custom sequence but in dynamic schema generation use value as update -->
+         <!-- be care full on param name some hibernate version use only name as sequence or some name as sequence_name -->
+         <!-- <generator class="sequence"><param name="sequence_name">PID_SEQ</param></generator> -->
+
+       <!-- ================================================================     -->
+       
+       
+       <!-- It is very use full in batch processing be care hibernate version must be in 4.3.11.final and its less otherwise it throws Exception -->
+       <!-- <generator class="hilo">
+         <param name="table">HI_TAB</param>
+         <param name="column">HI_COL</param>
+         <param name="max_lo">5</param> 
+         </generator>-->
+         <!-- ================================================================     -->
+         
+         
+         <!-- hilo generator use as default but take as max_lo value here next_hi col default value is =1  -->
+        <!--  <generator class="hilo">
+              <param name="max_lo">5</param>
+          </generator> -->
+           <!-- ================================================================     -->
+           
+           
+          
+          <!-- With out taking any property its next_hi column value is= -->
+		<!-- <generator class="hilo"/> -->
+		   <!-- ================================================================     -->
+		
+		
+		<!-- this is seq hilo used in oracle not suitable in my sql if no specific sequence enable then it creats default sequence hibernate_seq it s rule starts with  1 and increament by 1 -->
+		<!-- <generator class="seqhilo">
+	       <param name="max_lo">10</param>
+        </generator> -->
+        <!-- ================================================================     -->
+        
+        
+        
+        <!-- for custom seqhilo generator -->
+		<!-- <generator class="seqhilo">
+		  <param name="sequence">PID_SEQ</param>
+		  <param name="max_lo">10</param>
+		</generator> -->
+		 <!-- ================================================================     -->
+		 
+		 <!-- for native generator it hav no class if database we use oracle it uses-sequence and default one is hibernate_seq as default  if it is my sql it uses identity  -->
+		<!--  <generator class="native"/> -->
+		<!-- ================================================================     -->
+		
+		
+		<!-- for custom sequence in native -->
+		<!-- <generator class="native">
+		   <param name="sequence_name">pid_seq</param>
+		</generator>
+		 -->
+		 <!-- ================================================================     -->
+		 
+		 
+		 <!-- use native for my sql  -->
+		   <generator class="native"/>
+		  <!-- ================================================================     -->
+		  
+		  
+		  
+		 <!--  <generator class="select">
+		     <param name="key">pidname</param>
+		  </generator> -->
+		
+		
+		 
+		 
+		
+		</id>
+		<property name="pidname" column="PIDNAME" />
+		<property name="price" column="PRICE" />
+		<property name="qty" column="QTY" />
+
+
+
+
+	</class>
+
+
+</hibernate-mapping>

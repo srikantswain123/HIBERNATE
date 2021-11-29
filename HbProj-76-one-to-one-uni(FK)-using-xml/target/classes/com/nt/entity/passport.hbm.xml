@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping package="com.nt.entity">
+	<class name="Passport" table="PASSPORT_OTO_FK">
+	<id name="ppid" type="long">
+	<generator class="sequence"/>
+	</id>
+	<property name="country" type="string" length="20"/>
+	<property name="expiry"/>
+	<many-to-one name="details" class="Person" column="Person_id" cascade="all" lazy="proxy" unique="true" not-null="true"/>
+	
+	</class>
+	</hibernate-mapping>

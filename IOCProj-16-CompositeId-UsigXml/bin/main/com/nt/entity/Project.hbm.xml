@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping>
+	<class name="com.nt.entity.Project_Composite" table="Project_Composite">
+	<composite-id name="id" class="com.nt.entity.ProgramerId">
+         <key-property name="pid" column="PID"/>
+         <key-property name="projectId" column="PROJECTID"/>	
+	</composite-id>
+	<property name="projectName" column="PROJECTNAME"/>
+	<property name="company" column="COMPANY"/>
+	</class>
+	</hibernate-mapping>

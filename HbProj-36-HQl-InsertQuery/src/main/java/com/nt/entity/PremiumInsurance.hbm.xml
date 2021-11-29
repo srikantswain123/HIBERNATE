@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+     <class name="com.nt.entity.PremiumInsurancePolicy"  table="PREMIUM_INSURANCEPOLICY" >
+         <id name="pId">
+            <column name="PID"/>
+         </id>
+         <property name="policyName">
+             <column name="POLICYNAME"/>
+         </property>
+         <property name="company">
+              <column name="COMPANY"/>
+         </property>
+         <property name="policyType">
+               <column name="POLICYTYPE"/>
+         </property>
+         <property name="tenure">
+                  <column name="TENURE"/>
+         </property>
+     
+     </class>
+     <query name="HQL_TRANSFER_QUERY">
+     <![CDATA[
+     INSERT INTO com.nt.entity.PremiumInsurancePolicy(pId,policyName,policyType,company,tenure)SELECT p.policyId,p.policyName,p.policyType,p.company,p.tenure FROM com.nt.entity.InsurancePolicy as p  where p.tenure>=:min
+     
+     ]]>
+     
+     </query>
+     
+ 
+ 
+ </hibernate-mapping>	

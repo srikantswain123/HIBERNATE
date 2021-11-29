@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping package="com.nt.entity">
+	  <class name="JobSeeker">
+	  <id name="eid">
+	   <generator class="increment"/>
+	  </id>
+	  
+	  <property name="ename" type="string" length="20"/>
+	  <property name="eaddr" type="string" length="20"/>
+	  <property name="photo" type="binary"/>
+	  <property name="resume" type="characters"/>
+	 
+	  
+	  </class>
+	</hibernate-mapping>

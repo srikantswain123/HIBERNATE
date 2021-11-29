@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+<property name="hibernate.connection.user">system</property>
+<property name="hibernate.connection.password">Srikant1234</property>
+<property name="hbm2ddl.auto">update</property>
+<mapping resource="com/nt/entity/employe.hbm.xml"/>
+
+
+
+
+
+
+
+</session-factory>
+
+
+
+
+
+
+</hibernate-configuration>

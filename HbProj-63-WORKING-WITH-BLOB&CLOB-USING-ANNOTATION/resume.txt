@@ -1,0 +1,3 @@
+name:Srikant
+dob-02.06.1996\
+addrs-mumbai

@@ -1,0 +1,22 @@
+ 
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'application'
+}
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+dependencies {
+   // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
+implementation group: 'org.hibernate.orm', name: 'hibernate-core', version: '6.0.0.Alpha5'
+ // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6
+implementation group: 'com.oracle.database.jdbc', name: 'ojdbc6', version: '11.2.0.4'
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+
+   
+}

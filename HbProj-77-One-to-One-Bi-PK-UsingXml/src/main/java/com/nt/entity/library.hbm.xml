@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping package="com.nt.entity">
+	 <class name="LibraryMgmt" table="LIBRARY_MGMT_OTO_PK">
+	 <id name="lid" type="int">
+	   <generator class="foreign">
+	     <param name="property">studentDetails</param>
+	    </generator>
+	 </id>
+  <property name="type" type="string" length="20" />
+  <property name="startDate"/>
+  <property name="endDate"/>
+ 
+  <one-to-one name="studentDetails" class="Student" cascade="all" lazy="proxy"/>
+  
+  	 
+	 </class>
+	</hibernate-mapping>
